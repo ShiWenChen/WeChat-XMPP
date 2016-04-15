@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		555B1753EB20163483AE8E75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C371592CB820926FFB4D006D /* libPods.a */; };
+		BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */; };
+		BF4908081CBF987E00171BD5 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */; };
+		BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908061CBF987E00171BD5 /* MBProgressHUD.m */; };
+		BF49080E1CBFA26200171BD5 /* NAVStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = BF49080D1CBFA26200171BD5 /* NAVStyle.m */; };
+		BF4908121CC0CABF00171BD5 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908111CC0CABF00171BD5 /* MyViewController.m */; };
 		BF5F5B111CBE341D00D6B854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B101CBE341D00D6B854 /* main.m */; };
 		BF5F5B141CBE341D00D6B854 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B131CBE341D00D6B854 /* AppDelegate.m */; };
 		BF5F5B171CBE341D00D6B854 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B161CBE341D00D6B854 /* ViewController.m */; };
@@ -15,6 +21,8 @@
 		BF5F5B1F1CBE341D00D6B854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5F5B1D1CBE341D00D6B854 /* LaunchScreen.storyboard */; };
 		BF5F5B2A1CBE341D00D6B854 /* WeChat_XMPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B291CBE341D00D6B854 /* WeChat_XMPPTests.m */; };
 		BF5F5B351CBE341D00D6B854 /* WeChat_XMPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B341CBE341D00D6B854 /* WeChat_XMPPUITests.m */; };
+		BF5F5B531CBF446D00D6B854 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */; };
+		BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B551CBF734500D6B854 /* OtherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +43,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20B9CFBDDBB20DFB91C849B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BF4908021CBF987E00171BD5 /* MBProgressHUD+HM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HM.h"; sourceTree = "<group>"; };
+		BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HM.m"; sourceTree = "<group>"; };
+		BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		BF4908051CBF987E00171BD5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		BF4908061CBF987E00171BD5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		BF49080A1CBF9D1D00171BD5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		BF49080C1CBFA26200171BD5 /* NAVStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVStyle.h; sourceTree = "<group>"; };
+		BF49080D1CBFA26200171BD5 /* NAVStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAVStyle.m; sourceTree = "<group>"; };
+		BF4908101CC0CABF00171BD5 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		BF4908111CC0CABF00171BD5 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		BF5F5B0C1CBE341D00D6B854 /* WeChat-XMPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeChat-XMPP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5F5B101CBE341D00D6B854 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF5F5B121CBE341D00D6B854 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BF5F5B131CBE341D00D6B854 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF5F5B121CBE341D00D6B854 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		BF5F5B131CBE341D00D6B854 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		BF5F5B151CBE341D00D6B854 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BF5F5B161CBE341D00D6B854 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF5F5B191CBE341D00D6B854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +70,11 @@
 		BF5F5B301CBE341D00D6B854 /* WeChat-XMPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeChat-XMPPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5F5B341CBE341D00D6B854 /* WeChat_XMPPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChat_XMPPUITests.m; sourceTree = "<group>"; };
 		BF5F5B361CBE341D00D6B854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		BF5F5B541CBF734500D6B854 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
+		BF5F5B551CBF734500D6B854 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		C371592CB820926FFB4D006D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A4E813A1223FC85BAD80F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555B1753EB20163483AE8E75 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +103,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C6F2ADF9716F12D4F38806 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6A4E813A1223FC85BAD80F9 /* Pods.debug.xcconfig */,
+				20B9CFBDDBB20DFB91C849B7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF4908011CBF987E00171BD5 /* MBProgessHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BF4908021CBF987E00171BD5 /* MBProgressHUD+HM.h */,
+				BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */,
+				BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */,
+				BF4908051CBF987E00171BD5 /* MBProgressHUD.h */,
+				BF4908061CBF987E00171BD5 /* MBProgressHUD.m */,
+			);
+			path = MBProgessHUD;
+			sourceTree = "<group>";
+		};
+		BF49080B1CBFA22600171BD5 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BF49080C1CBFA26200171BD5 /* NAVStyle.h */,
+				BF49080D1CBFA26200171BD5 /* NAVStyle.m */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		BF5F5B031CBE341D00D6B854 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +140,8 @@
 				BF5F5B281CBE341D00D6B854 /* WeChat-XMPPTests */,
 				BF5F5B331CBE341D00D6B854 /* WeChat-XMPPUITests */,
 				BF5F5B0D1CBE341D00D6B854 /* Products */,
+				11C6F2ADF9716F12D4F38806 /* Pods */,
+				FE658CDEED0B71BDB6BEFF1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +158,11 @@
 		BF5F5B0E1CBE341D00D6B854 /* WeChat-XMPP */ = {
 			isa = PBXGroup;
 			children = (
-				BF5F5B121CBE341D00D6B854 /* AppDelegate.h */,
-				BF5F5B131CBE341D00D6B854 /* AppDelegate.m */,
+				BF49080B1CBFA22600171BD5 /* Public */,
+				BF5F5B4D1CBF417A00D6B854 /* other */,
+				BF5F5B4A1CBF416200D6B854 /* lib */,
+				BF5F5B4B1CBF416200D6B854 /* login */,
+				BF5F5B4C1CBF416200D6B854 /* main */,
 				BF5F5B151CBE341D00D6B854 /* ViewController.h */,
 				BF5F5B161CBE341D00D6B854 /* ViewController.m */,
 				BF5F5B181CBE341D00D6B854 /* Main.storyboard */,
@@ -118,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				BF5F5B101CBE341D00D6B854 /* main.m */,
+				BF49080A1CBF9D1D00171BD5 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +201,50 @@
 			path = "WeChat-XMPPUITests";
 			sourceTree = "<group>";
 		};
+		BF5F5B4A1CBF416200D6B854 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				BF4908011CBF987E00171BD5 /* MBProgessHUD */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		BF5F5B4B1CBF416200D6B854 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */,
+				BF5F5B541CBF734500D6B854 /* OtherViewController.h */,
+				BF5F5B551CBF734500D6B854 /* OtherViewController.m */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		BF5F5B4C1CBF416200D6B854 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				BF4908101CC0CABF00171BD5 /* MyViewController.h */,
+				BF4908111CC0CABF00171BD5 /* MyViewController.m */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		BF5F5B4D1CBF417A00D6B854 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				BF5F5B121CBE341D00D6B854 /* AppDelegate.h */,
+				BF5F5B131CBE341D00D6B854 /* AppDelegate.m */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		FE658CDEED0B71BDB6BEFF1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C371592CB820926FFB4D006D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF5F5B391CBE341D00D6B854 /* Build configuration list for PBXNativeTarget "WeChat-XMPP" */;
 			buildPhases = (
+				02321A019F0DDBBE0CDD880F /* Check Pods Manifest.lock */,
 				BF5F5B081CBE341D00D6B854 /* Sources */,
 				BF5F5B091CBE341D00D6B854 /* Frameworks */,
 				BF5F5B0A1CBE341D00D6B854 /* Resources */,
+				51CE8E5E20FB75D43E343310 /* Embed Pods Frameworks */,
+				320BAEF9E032DD9DA767520D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +352,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5F5B1F1CBE341D00D6B854 /* LaunchScreen.storyboard in Resources */,
+				BF5F5B531CBF446D00D6B854 /* LoginStoryboard.storyboard in Resources */,
+				BF4908081CBF987E00171BD5 /* MBProgressHUD.bundle in Resources */,
 				BF5F5B1C1CBE341D00D6B854 /* Assets.xcassets in Resources */,
 				BF5F5B1A1CBE341D00D6B854 /* Main.storyboard in Resources */,
 			);
@@ -265,14 +375,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02321A019F0DDBBE0CDD880F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		320BAEF9E032DD9DA767520D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51CE8E5E20FB75D43E343310 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF5F5B081CBE341D00D6B854 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BF5F5B171CBE341D00D6B854 /* ViewController.m in Sources */,
+				BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */,
+				BF4908121CC0CABF00171BD5 /* MyViewController.m in Sources */,
 				BF5F5B141CBE341D00D6B854 /* AppDelegate.m in Sources */,
+				BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */,
+				BF49080E1CBFA26200171BD5 /* NAVStyle.m in Sources */,
 				BF5F5B111CBE341D00D6B854 /* main.m in Sources */,
+				BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,23 +574,29 @@
 		};
 		BF5F5B3A1CBE341D00D6B854 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A4E813A1223FC85BAD80F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "/Users/xiaochengshenghuo/Documents/个人文件/陈世文/个人项目/XMPPWeChat/WeChat-XMPP/WeChat-XMPP/PrefixHeader.pch";
 				INFOPLIST_FILE = "WeChat-XMPP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaochengshenghuo.WeChat-XMPP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WeChat-XMPP/breageHeader.h\"";
 			};
 			name = Debug;
 		};
 		BF5F5B3B1CBE341D00D6B854 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20B9CFBDDBB20DFB91C849B7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "/Users/xiaochengshenghuo/Documents/个人文件/陈世文/个人项目/XMPPWeChat/WeChat-XMPP/WeChat-XMPP/PrefixHeader.pch";
 				INFOPLIST_FILE = "WeChat-XMPP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaochengshenghuo.WeChat-XMPP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WeChat-XMPP/breageHeader.h\"";
 			};
 			name = Release;
 		};
@@ -496,6 +665,7 @@
 				BF5F5B3B1CBE341D00D6B854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF5F5B3C1CBE341D00D6B854 /* Build configuration list for PBXNativeTarget "WeChat-XMPPTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +674,7 @@
 				BF5F5B3E1CBE341D00D6B854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF5F5B3F1CBE341D00D6B854 /* Build configuration list for PBXNativeTarget "WeChat-XMPPUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +683,7 @@
 				BF5F5B411CBE341D00D6B854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

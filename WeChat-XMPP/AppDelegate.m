@@ -7,8 +7,35 @@
 //
 
 #import "AppDelegate.h"
+#import <XMPPFramework.h>
+#import "NAVStyle.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate ()<XMPPStreamDelegate>
+{
+    /**
+     *  xmpp数据流
+     */
+    XMPPStream *_xmppStream;
+    XMPPResultBlock _resultBlock;
+}
+
+/**
+ *  1 初始化XMPPStream
+ */
+-(void)initXMPPStream;
+/**
+ * 2 连接到服务器
+ */
+-(void)connectHost;
+/**
+ * 3 连接成功，发送密码
+ */
+-(void)sendPwd;
+/**
+ *  4 登陆成功，告诉服务器，用户在线
+ */
+-(void)sendOnlenHost;
 
 @end
 
@@ -16,30 +43,147 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [NAVStyle setNavStyle];
+
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+#pragma mark 初始化XMPPStream
+-(void)initXMPPStream{
+    myLog(@"实例化Stream");
+    _xmppStream = [[XMPPStream alloc] init];
+    /**
+     *  设置代理 队列为全局默认队列
+     */
+    [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+}
+#pragma mark 连接服务器
+-(void)connectHost{
+    myLog(@"开始连接服务器");
+    if (!_xmppStream) {
+        [self initXMPPStream];
+    }
+    
+    /**
+     *  设置用户的JID（用户名) domain：域名 resource为设备标示
+     */
+    NSString *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    
+    
+    XMPPJID *myJID = [XMPPJID jidWithUser:user domain:@"wenge.local" resource:@"iPhone"];
+    _xmppStream.myJID = myJID;
+    /**
+     *  服务器ip地址
+     */
+    _xmppStream.hostName = @"192.168.1.155";
+    /**
+     *  设置服务器端口号
+     */
+    _xmppStream.hostPort = 5222;
+    NSError *error = nil;
+    
+    if (![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error]) {
+        myLog(@"%@",error);
+    }
+    
+    
+}
+-(void)sendPwd{
+    NSError *error = nil;
+    NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"];
+    [_xmppStream authenticateWithPassword:pwd error:&error];
+    if (error) {
+        myLog(@"%@",error);
+    }
+}
+/**
+ *  告诉服务器该用户在线
+ */
+-(void)sendOnlenHost{
+    /**
+     * 告诉服务器当前用户在线
+     */
+    myLog(@" 告诉服务器当前用户在线");
+    XMPPPresence *presence = [XMPPPresence presence];
+    [_xmppStream sendElement:presence];
+}
+/**
+ *  注销登录
+ */
+-(void)XMPPLogOff{
+    /**
+     *  告诉服务器离线
+     */
+    XMPPPresence *disConnect = [XMPPPresence presenceWithType:@"unavailable"];
+    [_xmppStream sendElement:disConnect];
+    /**
+     *  断开连接
+     */
+    [_xmppStream disconnect];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
+    self.window.rootViewController = [storyboard instantiateInitialViewController];
+    
+}
+#pragma mark xmpp代理方法
+/**
+ *  链接成功进入
+ */
+-(void)xmppStreamDidConnect:(XMPPStream *)sender{
+    myLog(@"连接成功%@",sender);
+    [self sendPwd];
+}
+/**
+ *  链接失败进入
+ */
+-(void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error{
+    myLog(@"与主机断开连接%@",error);
+    if (error && _resultBlock) {
+        _resultBlock(XMPPResultTypeNetError);
+    }
+}
+/**
+ *  密码正确，验证成功
+ *
+ *  @param sender
+ */
+-(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
+    myLog(@"授权成功");
+    [self sendOnlenHost];
+    
+    if (_resultBlock) {
+        _resultBlock(XMPPResultTypeLoginSuccess);
+    }
+}
+-(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error{
+    myLog(@"授权失败");
+   
+    if (_resultBlock) {
+        _resultBlock(XMPPResultTypeLoginFailure);
+    }
+    [self XMPPLogOff];
+    
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+/**
+ *  用户登录方法
+ */
+-(void)userLogin:(XMPPResultBlock)resultBlock{
+    _resultBlock = resultBlock;
+    [self connectHost];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
+
+
+
+
+
+
+
+
+
+
 
 @end
