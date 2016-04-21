@@ -608,7 +608,7 @@
 				GCC_PREFIX_HEADER = "/Users/xiaochengshenghuo/Documents/个人文件/陈世文/个人项目/XMPPWeChat/WeChat-XMPP/WeChat-XMPP/PrefixHeader.pch";
 				INFOPLIST_FILE = "WeChat-XMPP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaochengshenghuo.WeChat-XMPP";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.WeChat-XMPP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WeChat-XMPP/breageHeader.h\"";
 			};
@@ -622,7 +622,7 @@
 				GCC_PREFIX_HEADER = "/Users/xiaochengshenghuo/Documents/个人文件/陈世文/个人项目/XMPPWeChat/WeChat-XMPP/WeChat-XMPP/PrefixHeader.pch";
 				INFOPLIST_FILE = "WeChat-XMPP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaochengshenghuo.WeChat-XMPP";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.WeChat-XMPP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/WeChat-XMPP/breageHeader.h\"";
 			};
