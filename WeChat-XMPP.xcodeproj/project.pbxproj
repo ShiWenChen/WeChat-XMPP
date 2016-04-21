@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		555B1753EB20163483AE8E75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C371592CB820926FFB4D006D /* libPods.a */; };
+		BF06AABE1CC5C51F005610D9 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06AABD1CC5C51F005610D9 /* UserInfo.m */; };
+		BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E11CC7760500215827 /* LoginSuperClass.m */; };
 		BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */; };
 		BF4908081CBF987E00171BD5 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */; };
 		BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908061CBF987E00171BD5 /* MBProgressHUD.m */; };
@@ -23,6 +25,7 @@
 		BF5F5B351CBE341D00D6B854 /* WeChat_XMPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B341CBE341D00D6B854 /* WeChat_XMPPUITests.m */; };
 		BF5F5B531CBF446D00D6B854 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */; };
 		BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B551CBF734500D6B854 /* OtherViewController.m */; };
+		BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB250FC1CC4B1B90035D334 /* loginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,11 @@
 
 /* Begin PBXFileReference section */
 		20B9CFBDDBB20DFB91C849B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BF06AABB1CC5C4F9005610D9 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		BF06AABC1CC5C51F005610D9 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		BF06AABD1CC5C51F005610D9 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		BF2001E01CC7760500215827 /* LoginSuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSuperClass.h; sourceTree = "<group>"; };
+		BF2001E11CC7760500215827 /* LoginSuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSuperClass.m; sourceTree = "<group>"; };
 		BF4908021CBF987E00171BD5 /* MBProgressHUD+HM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HM.h"; sourceTree = "<group>"; };
 		BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HM.m"; sourceTree = "<group>"; };
 		BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -73,6 +81,8 @@
 		BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		BF5F5B541CBF734500D6B854 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		BF5F5B551CBF734500D6B854 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		BFB250FB1CC4B1B90035D334 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		BFB250FC1CC4B1B90035D334 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		C371592CB820926FFB4D006D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A4E813A1223FC85BAD80F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +120,16 @@
 				20B9CFBDDBB20DFB91C849B7 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF06AABA1CC5C4F9005610D9 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				BF06AABB1CC5C4F9005610D9 /* Singleton.h */,
+				BF06AABC1CC5C51F005610D9 /* UserInfo.h */,
+				BF06AABD1CC5C51F005610D9 /* UserInfo.m */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 		BF4908011CBF987E00171BD5 /* MBProgessHUD */ = {
@@ -158,6 +178,7 @@
 		BF5F5B0E1CBE341D00D6B854 /* WeChat-XMPP */ = {
 			isa = PBXGroup;
 			children = (
+				BF06AABA1CC5C4F9005610D9 /* Singleton */,
 				BF49080B1CBFA22600171BD5 /* Public */,
 				BF5F5B4D1CBF417A00D6B854 /* other */,
 				BF5F5B4A1CBF416200D6B854 /* lib */,
@@ -215,6 +236,10 @@
 				BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */,
 				BF5F5B541CBF734500D6B854 /* OtherViewController.h */,
 				BF5F5B551CBF734500D6B854 /* OtherViewController.m */,
+				BFB250FB1CC4B1B90035D334 /* loginViewController.h */,
+				BFB250FC1CC4B1B90035D334 /* loginViewController.m */,
+				BF2001E01CC7760500215827 /* LoginSuperClass.h */,
+				BF2001E11CC7760500215827 /* LoginSuperClass.m */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -432,9 +457,12 @@
 				BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */,
 				BF4908121CC0CABF00171BD5 /* MyViewController.m in Sources */,
 				BF5F5B141CBE341D00D6B854 /* AppDelegate.m in Sources */,
+				BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */,
 				BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */,
 				BF49080E1CBFA26200171BD5 /* NAVStyle.m in Sources */,
 				BF5F5B111CBE341D00D6B854 /* main.m in Sources */,
+				BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */,
+				BF06AABE1CC5C51F005610D9 /* UserInfo.m in Sources */,
 				BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

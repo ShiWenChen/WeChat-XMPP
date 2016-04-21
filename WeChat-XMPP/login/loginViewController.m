@@ -1,40 +1,36 @@
 //
-//  OtherViewController.m
+//  loginViewController.m
 //  WeChat-XMPP
 //
-//  Created by 小城生活 on 16/4/14.
+//  Created by 小城生活 on 16/4/18.
 //  Copyright © 2016年 小城生活. All rights reserved.
 //
 
-#import "OtherViewController.h"
-#import "AppDelegate.h"
-@interface OtherViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *userName;
+#import "loginViewController.h"
+
+@interface loginViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPwd;
 
 @end
 
-@implementation OtherViewController
+@implementation loginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.userPwd.text = @"123456";
-    self.userName.text = @"zhangsan";
+    self.userName.text = [UserInfo shareduserInfo].userName;
 }
 /**
- *  登录方法
+ *  登陆
  */
 - (IBAction)LoginAction:(id)sender {
+//    UserInfo *userinfo = [UserInfo shareduserInfo];
+//    userinfo.userName = self.userName.text;
+//    userinfo.userPwd = self.userPwd.text;
+//    [super userLoginAction];
     
-    /**
-     *  将用户名，密码存入单例
-     */
-    UserInfo *userinfo = [UserInfo shareduserInfo];
-    userinfo.userName = self.userName.text;
-    userinfo.userPwd = self.userPwd.text;
+    [UserInfo shareduserInfo].userPwd = self.userPwd.text;
     [super userLoginAction];
-    
-    
     
 }
 
@@ -42,12 +38,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)cancleAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(void)dealloc{
-    myLog(@"dealloc");
-}
+
 /*
 #pragma mark - Navigation
 

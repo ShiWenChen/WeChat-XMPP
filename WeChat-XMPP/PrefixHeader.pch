@@ -8,8 +8,9 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
-
+#import "AppDelegate.h"
 #import "MBProgressHUD+HM.h"
+#import "UserInfo.h"
 
 ///自定义log
 #ifdef DEBUG

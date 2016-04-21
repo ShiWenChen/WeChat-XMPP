@@ -156,7 +156,7 @@
                     <tabBarItem key="tabBarItem" title="我" id="Jx1-Wn-wI5"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="H8h-kU-td5">
-                        <barButtonItem key="rightBarButtonItem" title="取消" id="aaH-y4-UrT">
+                        <barButtonItem key="rightBarButtonItem" title="注销" id="aaH-y4-UrT">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logtAction:" destination="Svo-ef-W1p" id="UxM-RW-mRM"/>

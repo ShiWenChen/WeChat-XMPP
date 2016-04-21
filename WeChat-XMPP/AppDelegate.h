@@ -27,7 +27,7 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);
 /**
  *  登录
  */
--(void)userLogin:(XMPPResultBlock)resultBlock;
+-(void)XMPPUserLogin:(XMPPResultBlock)resultBlock;
 
 
 @end

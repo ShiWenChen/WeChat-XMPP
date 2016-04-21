@@ -44,6 +44,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NAVStyle setNavStyle];
+    [[UserInfo shareduserInfo] readUSerName];
+    if ([[UserInfo shareduserInfo].isLogin isEqualToString: @"1"]) {
+        [self XMPPUserLogin:nil];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
+    }
 
     
     return YES;
@@ -68,7 +74,7 @@
     /**
      *  设置用户的JID（用户名) domain：域名 resource为设备标示
      */
-    NSString *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSString *user = [UserInfo shareduserInfo].userName;
     
     
     XMPPJID *myJID = [XMPPJID jidWithUser:user domain:@"wenge.local" resource:@"iPhone"];
@@ -91,8 +97,9 @@
 }
 -(void)sendPwd{
     NSError *error = nil;
-    NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"pwd"];
-    [_xmppStream authenticateWithPassword:pwd error:&error];
+    
+    NSString *userPwd = [UserInfo shareduserInfo].userPwd;
+    [_xmppStream authenticateWithPassword:userPwd error:&error];
     if (error) {
         myLog(@"%@",error);
     }
@@ -115,6 +122,8 @@
     /**
      *  告诉服务器离线
      */
+    [UserInfo shareduserInfo].isLogin = @"0";
+    [[UserInfo shareduserInfo]saveUserName];
     XMPPPresence *disConnect = [XMPPPresence presenceWithType:@"unavailable"];
     [_xmppStream sendElement:disConnect];
     /**
@@ -159,16 +168,18 @@
     myLog(@"授权失败");
    
     if (_resultBlock) {
+        
         _resultBlock(XMPPResultTypeLoginFailure);
     }
-    [self XMPPLogOff];
+    
     
 }
 
 /**
  *  用户登录方法
  */
--(void)userLogin:(XMPPResultBlock)resultBlock{
+-(void)XMPPUserLogin:(XMPPResultBlock)resultBlock{
+    [self XMPPLogOff];
     _resultBlock = resultBlock;
     [self connectHost];
 }
