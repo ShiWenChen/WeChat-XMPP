@@ -19,7 +19,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="通讯录" id="SYv-dq-dEZ"/>
-                    <navigationItem key="navigationItem" id="SDu-CH-xJh"/>
+                    <navigationItem key="navigationItem" title="通讯录" id="SDu-CH-xJh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCI-oW-AFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,7 +40,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="微信" id="n9H-mq-ayF"/>
-                    <navigationItem key="navigationItem" id="m28-mH-hCr"/>
+                    <navigationItem key="navigationItem" title="微信" id="m28-mH-hCr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgH-0h-ddQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +155,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="我" id="Jx1-Wn-wI5"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="H8h-kU-td5">
+                    <navigationItem key="navigationItem" title="我" id="H8h-kU-td5">
                         <barButtonItem key="rightBarButtonItem" title="注销" id="aaH-y4-UrT">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -184,7 +184,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="发现" id="lNx-e7-nFz"/>
-                    <navigationItem key="navigationItem" id="oXR-he-ms2"/>
+                    <navigationItem key="navigationItem" title="发现" id="oXR-he-ms2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byc-57-98P" userLabel="First Responder" sceneMemberID="firstResponder"/>

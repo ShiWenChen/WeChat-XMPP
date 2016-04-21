@@ -7,8 +7,9 @@
 //
 
 #import "loginViewController.h"
+#import "RegistViewController.h"
 
-@interface loginViewController ()
+@interface loginViewController ()<RegistViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPwd;
 
@@ -18,19 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
     self.userName.text = [UserInfo shareduserInfo].userName;
 }
 /**
  *  登陆
  */
 - (IBAction)LoginAction:(id)sender {
-//    UserInfo *userinfo = [UserInfo shareduserInfo];
-//    userinfo.userName = self.userName.text;
-//    userinfo.userPwd = self.userPwd.text;
-//    [super userLoginAction];
-    
-    [UserInfo shareduserInfo].userPwd = self.userPwd.text;
+    UserInfo *userinfo = [UserInfo shareduserInfo];
+    userinfo.userName = self.userName.text;
+    userinfo.userPwd = self.userPwd.text;
     [super userLoginAction];
+    
+//    [UserInfo shareduserInfo].userPwd = self.userPwd.text;
+//    [super userLoginAction];
     
 }
 
@@ -38,7 +43,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)updateUserName{
+    self.userName.text = [UserInfo shareduserInfo].userName;
+    [MBProgressHUD showSuccess:@"请输入密码以登陆" toView:self.view];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    /**
+     *  获取控制器
+     */
+    id viewController = segue.destinationViewController;
+    
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = segue.destinationViewController;
+        if ([nav.topViewController isKindOfClass:[RegistViewController class] ]) {
+            RegistViewController *registViewControl = (RegistViewController *)nav.topViewController;
+            registViewControl.delegate = self;
+        }
+    }
+}
 /*
 #pragma mark - Navigation
 

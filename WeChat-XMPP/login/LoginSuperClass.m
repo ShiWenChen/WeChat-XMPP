@@ -12,12 +12,30 @@
 
 
 -(void)userLoginAction{
-    [MBProgressHUD showMessage:@"登录中..."];
-    __weak typeof(self) mySelf = self;
+//    [MBProgressHUD showMessage:@"登录中..." toView:self.view];
+//    
+//    [self.view endEditing:YES];
+//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+//    
+//    delegate.regist = NO;
+//    __weak typeof(self) mySelf = self;
+//    [delegate XMPPUserLogin:^(XMPPResultType type) {
+//        [mySelf loginResult:type];
+//    }];
     [self.view endEditing:YES];
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate XMPPUserLogin:^(XMPPResultType type) {
-        [self loginResult:type];
+    
+    // 登录之前给个提示
+    
+    [MBProgressHUD showMessage:@"正在登录中..."];
+    /**
+     *  获取XMPPToll单例
+     */
+    MyXMPPToll *xmppToll = [MyXMPPToll sharedMyXMPPToll];
+    xmppToll.regist = NO;
+    __block typeof(self) mySelf = self;
+    
+    [xmppToll XMPPUserLogin:^(XMPPResultType type) {
+        [mySelf loginResult:type];
     }];
 }
 
@@ -28,20 +46,17 @@
             case XMPPResultTypeLoginSuccess:
                 myLog(@"登录成功");
                 
-                [MBProgressHUD showSuccess:@"登录成功"];
                 [self showMainView];
                 break;
             case XMPPResultTypeLoginFailure:
                 myLog(@"登录失败");
                 
-                [MBProgressHUD showError:@"账号或密码错误"];
+                [MBProgressHUD showError:@"用户名或者密码不正确" ];
                 
                 break;
             case XMPPResultTypeNetError:
-                
-                [MBProgressHUD showMessage:@"网络连接失败"];
+                [MBProgressHUD showError:@"网络连接失败"];
                 myLog(@"登录失败");
-                [MBProgressHUD hideHUD];
                 
                 break;
             default:

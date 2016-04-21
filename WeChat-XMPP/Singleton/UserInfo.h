@@ -25,6 +25,15 @@ SingletonH(userInfo)
  */
 @property (nonatomic,copy) NSString *userPwd;
 /**
+ *  注册用户名
+ */
+@property (nonatomic,copy) NSString *userRegistName;
+/**
+ *  注册手机号
+ */
+@property (nonatomic,copy) NSString *userRegistPwd;
+
+/**
  *  用于判断是否登录 1代表登录，0代表未登录
  */
 @property (nonatomic,assign) NSString *isLogin;

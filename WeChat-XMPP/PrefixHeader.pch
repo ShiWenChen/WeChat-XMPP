@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "MBProgressHUD+HM.h"
 #import "UserInfo.h"
+#import "MBProgressHUD.h"
+#import "MyXMPPToll.h"
 
 ///自定义log
 #ifdef DEBUG

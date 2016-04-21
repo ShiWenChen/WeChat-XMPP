@@ -23,8 +23,7 @@
  *  注销登录
  */
 - (IBAction)logtAction:(id)sender {
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate XMPPLogOff];
+    [[MyXMPPToll sharedMyXMPPToll] XMPPLogOff];
     
 }
 
