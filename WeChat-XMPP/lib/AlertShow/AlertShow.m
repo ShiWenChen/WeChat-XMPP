@@ -20,6 +20,7 @@ SingletonM(AlertShow)
     }
     if (myBtnTitle2 == nil) {
         myBtnTitle2 =@"";
+        
     }
     NSString *cacelBtnTitle = @"取消";
     
