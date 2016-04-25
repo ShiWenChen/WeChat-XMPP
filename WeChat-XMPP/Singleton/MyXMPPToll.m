@@ -2,8 +2,8 @@
 //  MyXMPPToll.m
 //  WeChat-XMPP
 //
-//  Created by 小城生活 on 16/4/21.
-//  Copyright © 2016年 小城生活. All rights reserved.
+//  Created by test on 16/4/21.
+//  Copyright © 2016年 test. All rights reserved.
 //
 
 #import "MyXMPPToll.h"
@@ -16,7 +16,19 @@
      */
     XMPPStream *_xmppStream;
     XMPPResultBlock _resultBlock;
+    
+    /**
+     xmpp用于存储数据的类
+     */
+    XMPPvCardCoreDataStorage *_xmppCoreData;
+    /**
+     xmpp头像模块
+     */
+    XMPPvCardAvatarModule *_xmppvCard;
+    
 }
+
+
 
 /**
  *  1 初始化XMPPStream
@@ -43,7 +55,29 @@ SingletonM(MyXMPPToll)
 #pragma mark 初始化XMPPStream
 -(void)initXMPPStream{
     myLog(@"实例化Stream");
+    /**
+     实例化Stream
+     */
     _xmppStream = [[XMPPStream alloc] init];
+    /**
+     *  创建电子名片模块
+     */
+    _xmppCoreData = [XMPPvCardCoreDataStorage sharedInstance];
+    self.xmppTemp = [[XMPPvCardTempModule alloc] initWithvCardStorage:_xmppCoreData];
+    /**
+     *  激活xmpptemp
+     */
+    [_xmppTemp activate:_xmppStream];
+    
+    
+    /**
+     通过电子名片实例化头像模块
+     */
+    _xmppvCard = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:self.xmppTemp ];
+    /**
+     *  激活头像模块
+     */
+    [_xmppvCard activate:_xmppStream];
     /**
      *  设置代理 队列为全局默认队列
      */

@@ -7,17 +7,35 @@
 //
 
 #import "MyViewController.h"
-#import "AppDelegate.h"
+#import <XMPPvCardTemp.h>
+#import "UserInfo.h"
 
 @interface MyViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
+@property (weak, nonatomic) IBOutlet UILabel *lbUserNick;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbUserNumber;
 @end
 
 @implementation MyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+-(void)viewDidAppear:(BOOL)animated{
+    /**
+     *  用XMPP的XMPPvCardTemp对象可以直接获取沙盒中数据库的用户的信息
+     */
+    
+    myLog(@"%@",[MyXMPPToll sharedMyXMPPToll].xmppTemp.myvCardTemp);
+    XMPPvCardTemp *useCard = [MyXMPPToll sharedMyXMPPToll].xmppTemp.myvCardTemp;
+    if (useCard.photo) {
+        self.headImage.image = [UIImage imageWithData:useCard.photo];
+    }
+    self.lbUserNick.text = useCard.nickname;
+    
+    self.lbUserNumber.text = [NSString stringWithFormat:@"微信号:%@",[UserInfo shareduserInfo].userName];
 }
 /**
  *  注销登录

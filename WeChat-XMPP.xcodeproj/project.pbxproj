@@ -12,6 +12,8 @@
 		BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E11CC7760500215827 /* LoginSuperClass.m */; };
 		BF2001E81CC8800C00215827 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E71CC8800C00215827 /* RegistViewController.m */; };
 		BF2001EB1CC8D6C400215827 /* MyXMPPToll.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001EA1CC8D6C400215827 /* MyXMPPToll.m */; };
+		BF2001F11CCA17A000215827 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001F01CCA17A000215827 /* UserDetailViewController.m */; };
+		BF47A3A11CCDCC8400CE8EC2 /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47A3A01CCDCC8400CE8EC2 /* EditingViewController.m */; };
 		BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */; };
 		BF4908081CBF987E00171BD5 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */; };
 		BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4908061CBF987E00171BD5 /* MBProgressHUD.m */; };
@@ -27,6 +29,7 @@
 		BF5F5B351CBE341D00D6B854 /* WeChat_XMPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B341CBE341D00D6B854 /* WeChat_XMPPUITests.m */; };
 		BF5F5B531CBF446D00D6B854 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */; };
 		BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B551CBF734500D6B854 /* OtherViewController.m */; };
+		BF701A101CCA30F600122EFB /* AlertShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BF701A0F1CCA30F600122EFB /* AlertShow.m */; };
 		BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB250FC1CC4B1B90035D334 /* loginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,10 @@
 		BF2001E71CC8800C00215827 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		BF2001E91CC8D6C400215827 /* MyXMPPToll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyXMPPToll.h; sourceTree = "<group>"; };
 		BF2001EA1CC8D6C400215827 /* MyXMPPToll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyXMPPToll.m; sourceTree = "<group>"; };
+		BF2001EF1CCA17A000215827 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		BF2001F01CCA17A000215827 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
+		BF47A39F1CCDCC8400CE8EC2 /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
+		BF47A3A01CCDCC8400CE8EC2 /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
 		BF4908021CBF987E00171BD5 /* MBProgressHUD+HM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HM.h"; sourceTree = "<group>"; };
 		BF4908031CBF987E00171BD5 /* MBProgressHUD+HM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HM.m"; sourceTree = "<group>"; };
 		BF4908041CBF987E00171BD5 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -87,6 +94,8 @@
 		BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		BF5F5B541CBF734500D6B854 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		BF5F5B551CBF734500D6B854 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		BF701A0E1CCA30F600122EFB /* AlertShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertShow.h; sourceTree = "<group>"; };
+		BF701A0F1CCA30F600122EFB /* AlertShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertShow.m; sourceTree = "<group>"; };
 		BFB250FB1CC4B1B90035D334 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		BFB250FC1CC4B1B90035D334 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		C371592CB820926FFB4D006D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +242,7 @@
 		BF5F5B4A1CBF416200D6B854 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				BF701A0D1CCA30F600122EFB /* AlertShow */,
 				BF4908011CBF987E00171BD5 /* MBProgessHUD */,
 			);
 			path = lib;
@@ -259,6 +269,10 @@
 			children = (
 				BF4908101CC0CABF00171BD5 /* MyViewController.h */,
 				BF4908111CC0CABF00171BD5 /* MyViewController.m */,
+				BF2001EF1CCA17A000215827 /* UserDetailViewController.h */,
+				BF2001F01CCA17A000215827 /* UserDetailViewController.m */,
+				BF47A39F1CCDCC8400CE8EC2 /* EditingViewController.h */,
+				BF47A3A01CCDCC8400CE8EC2 /* EditingViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -270,6 +284,15 @@
 				BF5F5B131CBE341D00D6B854 /* AppDelegate.m */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		BF701A0D1CCA30F600122EFB /* AlertShow */ = {
+			isa = PBXGroup;
+			children = (
+				BF701A0E1CCA30F600122EFB /* AlertShow.h */,
+				BF701A0F1CCA30F600122EFB /* AlertShow.m */,
+			);
+			path = AlertShow;
 			sourceTree = "<group>";
 		};
 		FE658CDEED0B71BDB6BEFF1F /* Frameworks */ = {
@@ -468,14 +491,17 @@
 				BF2001E81CC8800C00215827 /* RegistViewController.m in Sources */,
 				BF4908121CC0CABF00171BD5 /* MyViewController.m in Sources */,
 				BF5F5B141CBE341D00D6B854 /* AppDelegate.m in Sources */,
+				BF47A3A11CCDCC8400CE8EC2 /* EditingViewController.m in Sources */,
 				BF2001EB1CC8D6C400215827 /* MyXMPPToll.m in Sources */,
 				BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */,
 				BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */,
+				BF2001F11CCA17A000215827 /* UserDetailViewController.m in Sources */,
 				BF49080E1CBFA26200171BD5 /* NAVStyle.m in Sources */,
 				BF5F5B111CBE341D00D6B854 /* main.m in Sources */,
 				BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */,
 				BF06AABE1CC5C51F005610D9 /* UserInfo.m in Sources */,
 				BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */,
+				BF701A101CCA30F600122EFB /* AlertShow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

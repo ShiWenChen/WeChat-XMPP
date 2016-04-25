@@ -25,5 +25,6 @@ SingletonM(userInfo)
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.userName = [defaults objectForKey:userKey];
     self.isLogin = [defaults objectForKey:userLoin];
+    self.userPwd = [defaults objectForKey:pwd];
 }
 @end

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 #import "NAVStyle.h"
+#import <DDLog.h>
+#import <DDTTYLogger.h>
 
 
 @interface AppDelegate ()
@@ -20,9 +22,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"%@",NSHomeDirectory());
+    /**
+     *  XMPP框架内部调试Log
+     */
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [NAVStyle setNavStyle];
     [[UserInfo shareduserInfo] readUSerName];
     if ([[UserInfo shareduserInfo].isLogin isEqualToString: @"1"]) {
+        
         [[MyXMPPToll sharedMyXMPPToll] XMPPUserLogin:nil];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         self.window.rootViewController = storyboard.instantiateInitialViewController;

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 test. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface MyViewController : ViewController
+@interface MyViewController : UITableViewController
 
 @end
