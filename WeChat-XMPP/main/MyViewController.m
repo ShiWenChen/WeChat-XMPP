@@ -41,6 +41,8 @@
  *  注销登录
  */
 - (IBAction)logtAction:(id)sender {
+    [UserInfo shareduserInfo].isLogin = @"0";
+    [[UserInfo shareduserInfo]saveUserName];
     [[MyXMPPToll sharedMyXMPPToll] XMPPLogOff];
     
 }

@@ -232,8 +232,7 @@ SingletonM(MyXMPPToll)
     /**
      *  告诉服务器离线
      */
-    [UserInfo shareduserInfo].isLogin = @"0";
-    [[UserInfo shareduserInfo]saveUserName];
+
     XMPPPresence *disConnect = [XMPPPresence presenceWithType:@"unavailable"];
     [_xmppStream sendElement:disConnect];
     /**
