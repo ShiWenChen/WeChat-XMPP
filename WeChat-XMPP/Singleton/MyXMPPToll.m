@@ -213,7 +213,7 @@ SingletonM(MyXMPPToll)
  *  用户登录方法
  */
 -(void)XMPPUserLogin:(XMPPResultBlock)resultBlock{
-    [self XMPPLogOff];
+    [_xmppStream disconnect];
     _resultBlock = resultBlock;
     [self connectHost];
 }

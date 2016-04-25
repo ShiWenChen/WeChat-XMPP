@@ -32,6 +32,7 @@
     if ([[UserInfo shareduserInfo].isLogin isEqualToString: @"1"]) {
         
         [[MyXMPPToll sharedMyXMPPToll] XMPPUserLogin:nil];
+        [[UserInfo shareduserInfo] saveUserName];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         self.window.rootViewController = storyboard.instantiateInitialViewController;
     }
