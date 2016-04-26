@@ -25,6 +25,10 @@
      xmpp头像模块
      */
     XMPPvCardAvatarModule *_xmppvCard;
+    /**
+     自动连接模块
+     */
+    XMPPReconnect *_xmppReconnect;
     
 }
 
@@ -46,13 +50,20 @@
  *  4 登陆成功，告诉服务器，用户在线
  */
 -(void)sendOnlenHost;
+/**
+ *  注销清理内存释放内存方法
+ */
+-(void)releaseMemory;
 
 @end
 
 @implementation MyXMPPToll
 SingletonM(MyXMPPToll)
 
-#pragma mark 初始化XMPPStream
+#pragma mark 内部方法
+/**
+ *  初始化XMPPStream
+ */
 -(void)initXMPPStream{
     myLog(@"实例化Stream");
     /**
@@ -68,8 +79,6 @@ SingletonM(MyXMPPToll)
      *  激活xmpptemp
      */
     [_xmppTemp activate:_xmppStream];
-    
-    
     /**
      通过电子名片实例化头像模块
      */
@@ -78,10 +87,47 @@ SingletonM(MyXMPPToll)
      *  激活头像模块
      */
     [_xmppvCard activate:_xmppStream];
+    
+    
+    /**
+     自动连接模块
+     */
+    _xmppReconnect = [[XMPPReconnect alloc] init];
+    [_xmppReconnect activate:_xmppStream];
+    
     /**
      *  设置代理 队列为全局默认队列
      */
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+}
+/**
+ *  释放内存 移除代理
+ */
+-(void)releaseMemory{
+    /**
+     *  移除代理
+     */
+    [_xmppStream removeDelegate:self];
+    /**
+     *  停止模块
+     */
+    [_xmppReconnect deactivate];
+    [_xmppTemp deactivate];
+    [_xmppvCard deactivate];
+    
+    /**
+     *  断开连接
+     */
+    [_xmppStream disconnect];
+    /**
+     *  清空资源
+     */
+    _xmppReconnect = nil;
+    _xmppStream = nil;
+    _xmppvCard = nil;
+    _xmppTemp = nil;
+    _xmppCoreData = nil;
+    
 }
 #pragma mark 连接服务器
 -(void)connectHost{
@@ -239,6 +285,7 @@ SingletonM(MyXMPPToll)
      *  断开连接
      */
     [_xmppStream disconnect];
+    [self releaseMemory];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
     [UIApplication sharedApplication].keyWindow.rootViewController = [storyboard instantiateInitialViewController];
     

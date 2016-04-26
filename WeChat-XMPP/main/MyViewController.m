@@ -41,9 +41,13 @@
  *  注销登录
  */
 - (IBAction)logtAction:(id)sender {
-    [UserInfo shareduserInfo].isLogin = @"0";
-    [[UserInfo shareduserInfo]saveUserName];
-    [[MyXMPPToll sharedMyXMPPToll] XMPPLogOff];
+    
+    
+    [[AlertShow sharedAlertShow] actionSheetShowWithTitle:nil adbtn2:@"确定" adblock1:nil adblock2:^{
+        [UserInfo shareduserInfo].isLogin = @"0";
+        [[UserInfo shareduserInfo]saveUserName];
+        [[MyXMPPToll sharedMyXMPPToll] XMPPLogOff];
+    } adController:self];
     
 }
 

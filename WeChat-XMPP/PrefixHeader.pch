@@ -13,6 +13,7 @@
 #import "UserInfo.h"
 #import "MBProgressHUD.h"
 #import "MyXMPPToll.h"
+#import "AlertShow.h"
 
 ///自定义log
 #ifdef DEBUG

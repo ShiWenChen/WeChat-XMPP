@@ -11,6 +11,7 @@
 #import <XMPPvCardAvatarModule.h>
 #import <XMPPvCardTempModule.h>
 #import <XMPPvCardCoreDataStorage.h>
+#import <XMPPReconnect.h>
 
 
 typedef enum{
@@ -45,5 +46,8 @@ SingletonH(MyXMPPToll)
  *  注册
  */
 -(void)XMPPRegist:(XMPPResultBlock)resultBlock;
+
+
+
 
 @end
