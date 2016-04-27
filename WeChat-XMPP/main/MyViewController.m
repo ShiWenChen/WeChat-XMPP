@@ -28,7 +28,7 @@
      *  用XMPP的XMPPvCardTemp对象可以直接获取沙盒中数据库的用户的信息
      */
     
-    myLog(@"%@",[MyXMPPToll sharedMyXMPPToll].xmppTemp.myvCardTemp);
+    myLog(@"%@",[MyXMPPToll sharedMyXMPPToll].xmppRoster);
     XMPPvCardTemp *useCard = [MyXMPPToll sharedMyXMPPToll].xmppTemp.myvCardTemp;
     if (useCard.photo) {
         self.headImage.image = [UIImage imageWithData:useCard.photo];

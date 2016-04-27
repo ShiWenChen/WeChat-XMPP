@@ -12,6 +12,8 @@
 #import <XMPPvCardTempModule.h>
 #import <XMPPvCardCoreDataStorage.h>
 #import <XMPPReconnect.h>
+#import <XMPPRoster.h>
+#import <XMPPRosterCoreDataStorage.h>
 
 
 typedef enum{
@@ -34,6 +36,13 @@ SingletonH(MyXMPPToll)
  */
 @property (nonatomic,strong) XMPPvCardTempModule *xmppTemp;
 
+/**
+ *  花名册模块(好友)
+ *
+ *  @return 和电子名片一样，只用将XMPPRoster模块添加即可，自动获取好友并且报讯在以XMPPRosterCoreDataStorage保存在沙盒中
+ */
+@property (nonatomic,strong) XMPPRoster *xmppRoster;
+@property (nonatomic,strong) XMPPRosterCoreDataStorage *xmppRosterCoreData;
 /**
  *  注销登录
  */

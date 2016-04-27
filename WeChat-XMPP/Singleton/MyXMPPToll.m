@@ -88,6 +88,18 @@ SingletonM(MyXMPPToll)
      */
     [_xmppvCard activate:_xmppStream];
     
+    /**
+     花名册模块
+     */
+    _xmppRosterCoreData = [[XMPPRosterCoreDataStorage alloc] init];
+    _xmppRoster = [[XMPPRoster alloc] initWithRosterStorage:_xmppRosterCoreData];
+    /**
+     *  激活花名册模块
+     */
+    [_xmppRoster activate:_xmppStream];
+    
+    
+    
     
     /**
      自动连接模块
@@ -114,6 +126,7 @@ SingletonM(MyXMPPToll)
     [_xmppReconnect deactivate];
     [_xmppTemp deactivate];
     [_xmppvCard deactivate];
+    [_xmppRoster deactivate];
     
     /**
      *  断开连接
@@ -127,6 +140,8 @@ SingletonM(MyXMPPToll)
     _xmppvCard = nil;
     _xmppTemp = nil;
     _xmppCoreData = nil;
+    _xmppRoster = nil;
+    _xmppRosterCoreData = nil;
     
 }
 #pragma mark 连接服务器
@@ -290,4 +305,5 @@ SingletonM(MyXMPPToll)
     [UIApplication sharedApplication].keyWindow.rootViewController = [storyboard instantiateInitialViewController];
     
 }
+
 @end

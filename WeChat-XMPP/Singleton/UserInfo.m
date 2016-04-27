@@ -8,7 +8,7 @@
 
 #import "UserInfo.h"
 
-
+#define DomainName @"wenge.local"
 
 @implementation UserInfo
 SingletonM(userInfo)
@@ -26,5 +26,8 @@ SingletonM(userInfo)
     self.userName = [defaults objectForKey:userKey];
     self.isLogin = [defaults objectForKey:userLoin];
     self.userPwd = [defaults objectForKey:pwd];
+}
+-(NSString *)userJID{
+    return [NSString stringWithFormat:@"%@@%@",self.userName,DomainName];
 }
 @end

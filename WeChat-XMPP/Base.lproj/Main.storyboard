@@ -6,27 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--通讯录-->
-        <scene sceneID="M6i-Vc-zZ4">
-            <objects>
-                <viewController id="yEE-4n-RkN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IPr-om-3QX"/>
-                        <viewControllerLayoutGuide type="bottom" id="QCu-sd-OTW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7cG-uA-Qed">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_contacts" id="SYv-dq-dEZ"/>
-                    <navigationItem key="navigationItem" title="通讯录" id="SDu-CH-xJh"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bCI-oW-AFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3322" y="-1202"/>
-        </scene>
         <!--微信-->
         <scene sceneID="Kvo-zi-FJV">
             <objects>
@@ -69,19 +48,49 @@
         <scene sceneID="SXy-bT-732">
             <objects>
                 <navigationController id="qJZ-Zr-zdc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="通讯录" id="Jod-eS-rNf"/>
+                    <tabBarItem key="tabBarItem" title="通讯录" image="tabbar_meHL" id="Jod-eS-rNf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wny-8N-nHT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="yEE-4n-RkN" kind="relationship" relationship="rootViewController" id="RLQ-ea-sXh"/>
+                        <segue destination="gsU-p9-i35" kind="relationship" relationship="rootViewController" id="JOG-1K-DYF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpQ-Zh-DEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3922.5" y="-1221.5"/>
+        </scene>
+        <!--通讯录-->
+        <scene sceneID="4Xk-fc-1tR">
+            <objects>
+                <tableViewController id="gsU-p9-i35" customClass="FriendsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1av-4I-UCx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cellId" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" id="UXB-wS-BOD">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UXB-wS-BOD" id="6HG-lw-VEh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gsU-p9-i35" id="5rN-xA-iPs"/>
+                            <outlet property="delegate" destination="gsU-p9-i35" id="4g8-9r-fUP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="通讯录" id="gwz-To-aYn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6TW-He-NfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3425.5" y="-1221.5"/>
         </scene>
         <!--发现-->
         <scene sceneID="egT-by-ao0">
@@ -552,9 +561,9 @@
     </scenes>
     <resources>
         <image name="DefaultHead" width="46" height="46"/>
-        <image name="tabbar_contacts" width="27" height="23"/>
         <image name="tabbar_discover" width="23" height="23"/>
         <image name="tabbar_mainframe" width="25" height="23"/>
         <image name="tabbar_me" width="23" height="23"/>
+        <image name="tabbar_meHL" width="23" height="23"/>
     </resources>
 </document>

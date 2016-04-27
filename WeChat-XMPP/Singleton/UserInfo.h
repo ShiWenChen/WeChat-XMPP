@@ -45,4 +45,8 @@ SingletonH(userInfo)
  *  从沙盒中读取用户名
  */
 -(void)readUSerName;
+/**
+ *  获取当前登录用户的JID
+ */
+-(NSString *)userJID;
 @end

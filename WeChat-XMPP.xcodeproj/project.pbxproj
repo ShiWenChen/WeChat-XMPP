@@ -31,6 +31,7 @@
 		BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B551CBF734500D6B854 /* OtherViewController.m */; };
 		BF701A101CCA30F600122EFB /* AlertShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BF701A0F1CCA30F600122EFB /* AlertShow.m */; };
 		BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB250FC1CC4B1B90035D334 /* loginViewController.m */; };
+		BFCAC48A1CD0700500B29B7F /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCAC4891CD0700500B29B7F /* FriendsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		BF701A0F1CCA30F600122EFB /* AlertShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertShow.m; sourceTree = "<group>"; };
 		BFB250FB1CC4B1B90035D334 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		BFB250FC1CC4B1B90035D334 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		BFCAC4881CD0700500B29B7F /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		BFCAC4891CD0700500B29B7F /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		C371592CB820926FFB4D006D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A4E813A1223FC85BAD80F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +276,8 @@
 				BF2001F01CCA17A000215827 /* UserDetailViewController.m */,
 				BF47A39F1CCDCC8400CE8EC2 /* EditingViewController.h */,
 				BF47A3A01CCDCC8400CE8EC2 /* EditingViewController.m */,
+				BFCAC4881CD0700500B29B7F /* FriendsViewController.h */,
+				BFCAC4891CD0700500B29B7F /* FriendsViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */,
 				BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */,
 				BF2001F11CCA17A000215827 /* UserDetailViewController.m in Sources */,
+				BFCAC48A1CD0700500B29B7F /* FriendsViewController.m in Sources */,
 				BF49080E1CBFA26200171BD5 /* NAVStyle.m in Sources */,
 				BF5F5B111CBE341D00D6B854 /* main.m in Sources */,
 				BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */,
