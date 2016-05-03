@@ -25,11 +25,17 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.title = @"个人信息";
-    _imagePick = [[UIImagePickerController alloc] init];
-    _imagePick.delegate = self;
+    
     [self loadData];
     
     
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    if (!_imagePick) {
+        _imagePick = [[UIImagePickerController alloc] init];
+        _imagePick.delegate = self;
+    }
     
 }
 /**

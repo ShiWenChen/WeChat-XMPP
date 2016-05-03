@@ -9,7 +9,10 @@
 #import "FriendsViewController.h"
 #import "MyXMPPToll.h"
 
-@interface FriendsViewController()
+@interface FriendsViewController()<NSFetchedResultsControllerDelegate>
+{
+    NSFetchedResultsController *_resultConextController;
+}
 @property (nonatomic , strong) NSArray *friendsData;
 
 @end
@@ -53,21 +56,54 @@
     /**
      *  执行请求，获取数据
      */
-     self.friendsData = [context executeFetchRequest:request error:nil];
+//     self.friendsData = [context executeFetchRequest:request error:nil];
     myLog(@"%@",self.friendsData);
     
+    /**
+     执行请求数据，若coadata数据库发生改变，测刷新数据
+
+     */
+    _resultConextController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    _resultConextController.delegate = self;
+    NSError *error;
+    [_resultConextController performFetch:&error];
+    if (error) {
+        myLog(@"%@",error);
+    }
+
+    
+    
+}
+/**
+ *  caredata数据库代理
+ */
+-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+    myLog(@"数据库发生改变");
+    [self.tableView reloadData];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellId=@"cellId";
     UITableViewCell *myCell=[tableView dequeueReusableCellWithIdentifier:cellId];
-    XMPPUserCoreDataStorageObject *friends = self.friendsData[indexPath.row];
-    myCell.textLabel.text = friends.nickname;
-    
+    XMPPUserCoreDataStorageObject *friends = _resultConextController.fetchedObjects[indexPath.row];
+    myCell.textLabel.text = friends.jidStr;
+    switch ([friends.sectionNum intValue]) {
+        case 0:
+            myCell.detailTextLabel.text = @"在线";
+            break;
+        case 1:
+            myCell.detailTextLabel.text = @"离开";
+            break;
+        case 2:
+            myCell.detailTextLabel.text = @"离线";
+            break;
+        default:
+            break;
+    }
     
     return myCell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.friendsData.count;
+    return _resultConextController.fetchedObjects.count;
 }
 
 @end
