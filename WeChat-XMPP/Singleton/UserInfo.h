@@ -12,7 +12,7 @@
 #define userKey @"user"
 #define userLoin @"isLogin"
 #define pwd @"pwd"
-
+#define DomainName @"@wenge.local"
 @interface UserInfo : NSObject
 
 SingletonH(userInfo)

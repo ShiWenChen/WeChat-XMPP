@@ -11,10 +11,7 @@
 
 @interface MyXMPPToll ()<XMPPStreamDelegate>
 {
-    /**
-     *  xmpp数据流
-     */
-    XMPPStream *_xmppStream;
+    
     XMPPResultBlock _resultBlock;
     
     /**

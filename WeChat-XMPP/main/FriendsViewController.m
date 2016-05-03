@@ -57,7 +57,6 @@
      *  执行请求，获取数据
      */
 //     self.friendsData = [context executeFetchRequest:request error:nil];
-    myLog(@"%@",self.friendsData);
     
     /**
      执行请求数据，若coadata数据库发生改变，测刷新数据
@@ -65,6 +64,7 @@
      */
     _resultConextController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
     _resultConextController.delegate = self;
+    myLog(@"%@",_resultConextController.fetchedObjects);
     NSError *error;
     [_resultConextController performFetch:&error];
     if (error) {
@@ -103,7 +103,9 @@
     return myCell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _resultConextController.fetchedObjects.count;
+    return  _resultConextController.fetchedObjects.count;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 @end

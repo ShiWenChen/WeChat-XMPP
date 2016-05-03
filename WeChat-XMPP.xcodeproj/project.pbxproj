@@ -30,6 +30,7 @@
 		BF5F5B531CBF446D00D6B854 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF5F5B521CBF446D00D6B854 /* LoginStoryboard.storyboard */; };
 		BF5F5B561CBF734500D6B854 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5F5B551CBF734500D6B854 /* OtherViewController.m */; };
 		BF701A101CCA30F600122EFB /* AlertShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BF701A0F1CCA30F600122EFB /* AlertShow.m */; };
+		BF7A35C81CD899D8007A46B9 /* AddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7A35C71CD899D8007A46B9 /* AddFriendsViewController.m */; };
 		BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB250FC1CC4B1B90035D334 /* loginViewController.m */; };
 		BFCAC48A1CD0700500B29B7F /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCAC4891CD0700500B29B7F /* FriendsViewController.m */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,8 @@
 		BF5F5B551CBF734500D6B854 /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		BF701A0E1CCA30F600122EFB /* AlertShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertShow.h; sourceTree = "<group>"; };
 		BF701A0F1CCA30F600122EFB /* AlertShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertShow.m; sourceTree = "<group>"; };
+		BF7A35C61CD899D8007A46B9 /* AddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendsViewController.h; sourceTree = "<group>"; };
+		BF7A35C71CD899D8007A46B9 /* AddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendsViewController.m; sourceTree = "<group>"; };
 		BFB250FB1CC4B1B90035D334 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		BFB250FC1CC4B1B90035D334 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		BFCAC4881CD0700500B29B7F /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				BF47A3A01CCDCC8400CE8EC2 /* EditingViewController.m */,
 				BFCAC4881CD0700500B29B7F /* FriendsViewController.h */,
 				BFCAC4891CD0700500B29B7F /* FriendsViewController.m */,
+				BF7A35C61CD899D8007A46B9 /* AddFriendsViewController.h */,
+				BF7A35C71CD899D8007A46B9 /* AddFriendsViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				BFB250FD1CC4B1B90035D334 /* loginViewController.m in Sources */,
 				BF06AABE1CC5C51F005610D9 /* UserInfo.m in Sources */,
 				BF4908091CBF987E00171BD5 /* MBProgressHUD.m in Sources */,
+				BF7A35C81CD899D8007A46B9 /* AddFriendsViewController.m in Sources */,
 				BF701A101CCA30F600122EFB /* AlertShow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

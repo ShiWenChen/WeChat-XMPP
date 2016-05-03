@@ -28,6 +28,10 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);
 SingletonH(MyXMPPToll)
 
 /**
+ *  xmpp数据流
+ */
+@property(nonatomic,strong) XMPPStream *xmppStream;
+/**
  *  是否是注册，YES为是，NO为否
  */
 @property (nonatomic,assign,getter=isRegist) BOOL regist;

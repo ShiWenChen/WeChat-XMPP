@@ -8,7 +8,7 @@
 
 #import "UserInfo.h"
 
-#define DomainName @"wenge.local"
+
 
 @implementation UserInfo
 SingletonM(userInfo)
