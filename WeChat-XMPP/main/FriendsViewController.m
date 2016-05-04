@@ -85,7 +85,13 @@
     NSString *cellId=@"cellId";
     UITableViewCell *myCell=[tableView dequeueReusableCellWithIdentifier:cellId];
     XMPPUserCoreDataStorageObject *friends = _resultConextController.fetchedObjects[indexPath.row];
-    myCell.textLabel.text = friends.jidStr;
+//    myLog(@"nickname%@",friends.nickname);
+    
+    if (friends.nickname == nil) {
+        myCell.textLabel.text = friends.jidStr;
+    }else{
+        myCell.textLabel.text = friends.nickname;
+    }
     switch ([friends.sectionNum intValue]) {
         case 0:
             myCell.detailTextLabel.text = @"在线";

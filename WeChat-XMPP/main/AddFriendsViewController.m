@@ -26,7 +26,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     NSString *friendsName = textField.text;
-    NSString *friendsStr = [NSString stringWithFormat:@"%@%@",friendsName,DomainName];
+    NSString *friendsStr = [NSString stringWithFormat:@"%@@%@",friendsName,DomainName];
     XMPPJID *friendsJid = [XMPPJID jidWithString:friendsStr];
     if ([friendsName isEqualToString:[UserInfo shareduserInfo].userName]) {
         [MBProgressHUD showError:@"不能添加自己为好友"];
@@ -40,8 +40,11 @@
      *  添加好友，只需要调用XMPPRoster的 subscrib添加订阅即可
      */
     [[MyXMPPToll sharedMyXMPPToll].xmppRoster subscribePresenceToUser:friendsJid];
+    [self.navigationController popViewControllerAnimated:YES];
     myLog(@"搜索");
     return YES;
 }
-
+-(void)dealloc{
+    myLog(@"%@",self);
+}
 @end
