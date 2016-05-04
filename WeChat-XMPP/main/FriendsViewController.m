@@ -114,4 +114,19 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+/**
+ *  删除好友
+ */
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        myLog(@"删除");
+        XMPPUserCoreDataStorageObject *friends = _resultConextController.fetchedObjects[indexPath.row];
+        [[MyXMPPToll sharedMyXMPPToll].xmppRoster removeUser:friends.jid];
+        
+    }
+}
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除好友";
+}
 @end
