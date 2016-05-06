@@ -27,6 +27,7 @@
      */
     XMPPReconnect *_xmppReconnect;
     
+    
 }
 
 
@@ -105,6 +106,13 @@ SingletonM(MyXMPPToll)
     [_xmppReconnect activate:_xmppStream];
     
     /**
+     *  聊天模块
+     */
+    _xmppMessageData = [[XMPPMessageArchivingCoreDataStorage alloc] init];
+    _xmppMessage = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_xmppMessageData];
+    [_xmppMessage activate:_xmppStream];
+    
+    /**
      *  设置代理 队列为全局默认队列
      */
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
@@ -124,6 +132,7 @@ SingletonM(MyXMPPToll)
     [_xmppTemp deactivate];
     [_xmppvCard deactivate];
     [_xmppRoster deactivate];
+    [_xmppMessage deactivate];
     
     /**
      *  断开连接
@@ -139,6 +148,8 @@ SingletonM(MyXMPPToll)
     _xmppCoreData = nil;
     _xmppRoster = nil;
     _xmppRosterCoreData = nil;
+    _xmppMessage = nil;
+    _xmppMessageData = nil;
     
 }
 #pragma mark 连接服务器

@@ -8,6 +8,7 @@
 
 #import "FriendsViewController.h"
 #import "MyXMPPToll.h"
+#import "ChactViewController.h"
 
 @interface FriendsViewController()<NSFetchedResultsControllerDelegate>
 {
@@ -113,6 +114,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    XMPPUserCoreDataStorageObject *friends = _resultConextController.fetchedObjects[indexPath.row];
+    [self performSegueWithIdentifier:@"ChactViewController" sender:friends.jid];
 }
 
 /**
@@ -128,5 +131,14 @@
 }
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除好友";
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    id viewControl = segue.destinationViewController;
+    if ([viewControl isKindOfClass:[ChactViewController class]]) {
+        ChactViewController *chactControl = viewControl;
+        chactControl.friendsJid = sender;
+        
+    }
 }
 @end

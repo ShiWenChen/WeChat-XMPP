@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		555B1753EB20163483AE8E75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C371592CB820926FFB4D006D /* libPods.a */; };
+		BF0122DC1CD9FC490086E4F9 /* ChactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0122DB1CD9FC490086E4F9 /* ChactViewController.m */; };
 		BF06AABE1CC5C51F005610D9 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06AABD1CC5C51F005610D9 /* UserInfo.m */; };
 		BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E11CC7760500215827 /* LoginSuperClass.m */; };
 		BF2001E81CC8800C00215827 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E71CC8800C00215827 /* RegistViewController.m */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		20B9CFBDDBB20DFB91C849B7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BF0122DA1CD9FC490086E4F9 /* ChactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChactViewController.h; sourceTree = "<group>"; };
+		BF0122DB1CD9FC490086E4F9 /* ChactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChactViewController.m; sourceTree = "<group>"; };
 		BF06AABB1CC5C4F9005610D9 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		BF06AABC1CC5C51F005610D9 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		BF06AABD1CC5C51F005610D9 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				BFCAC4891CD0700500B29B7F /* FriendsViewController.m */,
 				BF7A35C61CD899D8007A46B9 /* AddFriendsViewController.h */,
 				BF7A35C71CD899D8007A46B9 /* AddFriendsViewController.m */,
+				BF0122DA1CD9FC490086E4F9 /* ChactViewController.h */,
+				BF0122DB1CD9FC490086E4F9 /* ChactViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				BF2001EB1CC8D6C400215827 /* MyXMPPToll.m in Sources */,
 				BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */,
 				BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */,
+				BF0122DC1CD9FC490086E4F9 /* ChactViewController.m in Sources */,
 				BF2001F11CCA17A000215827 /* UserDetailViewController.m in Sources */,
 				BFCAC48A1CD0700500B29B7F /* FriendsViewController.m in Sources */,
 				BF49080E1CBFA26200171BD5 /* NAVStyle.m in Sources */,

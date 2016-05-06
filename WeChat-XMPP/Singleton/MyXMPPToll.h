@@ -14,6 +14,9 @@
 #import <XMPPReconnect.h>
 #import <XMPPRoster.h>
 #import <XMPPRosterCoreDataStorage.h>
+#import <XMPPMessageArchiving.h>
+#import <XMPPMessageArchivingCoreDataStorage.h>
+
 
 
 typedef enum{
@@ -47,6 +50,12 @@ SingletonH(MyXMPPToll)
  */
 @property (nonatomic,strong) XMPPRoster *xmppRoster;
 @property (nonatomic,strong) XMPPRosterCoreDataStorage *xmppRosterCoreData;
+/**
+ 聊天模块
+ */
+@property (nonatomic , strong) XMPPMessageArchiving *xmppMessage;
+@property (nonatomic , strong) XMPPMessageArchivingCoreDataStorage *xmppMessageData;
+
 /**
  *  注销登录
  */
