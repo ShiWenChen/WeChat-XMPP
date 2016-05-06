@@ -9,7 +9,7 @@
 #import "ChactViewController.h"
 #import <XMPPMessage.h>
 
-@interface ChactViewController()<UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate,UITextViewDelegate>
+@interface ChactViewController()<UITableViewDelegate,UITableViewDataSource,NSFetchedResultsControllerDelegate,UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     /**
      *  查询对象
@@ -97,7 +97,10 @@
  */
 -(void)tableViewScrollLast{
     NSIndexPath *indexLast = [NSIndexPath indexPathForRow:_resultsController.fetchedObjects.count - 1 inSection:0];
-    [self.tableView scrollToRowAtIndexPath:indexLast atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    if (indexLast.row >0) {
+        [self.tableView scrollToRowAtIndexPath:indexLast atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
+    
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId=@"ChatCellId";
@@ -105,41 +108,110 @@
     if (myCell==nil) {
         myCell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
     }
-    
+    myCell.textLabel.numberOfLines = 1000;
+    myCell.textLabel.textAlignment = NSTextAlignmentJustified;
     XMPPMessageArchiving_Message_CoreDataObject *message = _resultsController.fetchedObjects[indexPath.row];
+    /**
+     *  获取消息类型
+     */
+    NSString *messageType = [message.message attributeStringValueForName:@"bodyType"];
+    myLog(@"%@",messageType);
     
-    if ([message.outgoing boolValue]) {
-        myCell.textLabel.text = [NSString stringWithFormat:@"me:%@",message.body];
+    if ([messageType isEqualToString:@"image"]) {
+        myLog(@"消息类型为图片");
+        NSData *dataImage = [[NSData alloc] initWithBase64EncodedString:message.body options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage *image = [UIImage imageWithData:dataImage];
+        myCell.imageView.image = image;
+        return myCell;
+
+    }else if ([messageType isEqualToString:@"avi"]){
+        myLog(@"消息类型为音频");
+        return myCell;
     }else{
-        if (message.body == nil) {
-            myCell.textLabel.text = @"。。。";
+        if ([message.outgoing boolValue]) {
+            myCell.textLabel.text = [NSString stringWithFormat:@"me:%@",message.body];
         }else{
-            myCell.textLabel.text = [NSString stringWithFormat:@"you:%@",message.body];
+            if (message.body == nil) {
+                myCell.textLabel.text = @"输入中";
+            }else{
+                myCell.textLabel.text = [NSString stringWithFormat:@"you:%@",message.body];
+            }
+            
         }
-        
+        return myCell;
     }
     
-    return myCell;
 }
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _resultsController.fetchedObjects.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    XMPPMessageArchiving_Message_CoreDataObject *message = _resultsController.fetchedObjects[indexPath.row];
+    /**
+     *  获取消息类型
+     */
+    NSString *messageType = [message.message attributeStringValueForName:@"bodyType"];
+    if ([messageType isEqualToString:@"image"]) {
+        return 80;
+        
+    }else if ([messageType isEqualToString:@"avi"]){
+        myLog(@"消息类型为音频");
+        return 40;
+    }else{
+
+        UIFont *font = [UIFont systemFontOfSize:14];
+        CGRect rect = [message.body boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+        return rect.size.height+20;
+    }
 }
 -(void)textViewDidChange:(UITextView *)textView{
     NSString *messageStr = textView.text;
     if ([messageStr rangeOfString:@"\n"].length != 0) {
         myLog(@"发送消息");
-        [self sendMessage:messageStr];
+        /**
+         *  去除换行字符
+         */
+        messageStr = [messageStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [self sendMessage:messageStr ad:@"text"];
         textView.text = @"";
         
     }
 }
 /**
  *  发送消息
+ * 若要发送图片，有两种方式，一种是讲图片转为二进制data，然后以base64作为加密方式，转化为字符串，让后作为body发送，该方法传送数据不易过大。另一种是将图片先发送给服务器，然后，让服务器返回图片地址，及类型，然后再显示地址图片即可，一般用后一种。
  */
--(void)sendMessage:(NSString *)text{
+-(void)sendMessage:(NSString *)text ad:(NSString *)type{
     XMPPMessage *message = [XMPPMessage messageWithType:@"chat" to:self.friendsJid];
+    
+    [message addAttributeWithName:@"bodyType" stringValue:type];
     [message addBody:text];
     [[MyXMPPToll sharedMyXMPPToll].xmppStream sendElement:message];
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+/**
+ *  发送图片消息
+ */
+- (IBAction)sendImageAction {
+    UIImagePickerController *imagePickControl = [[UIImagePickerController alloc] init];
+    imagePickControl.delegate = self;
+    imagePickControl.allowsEditing = YES;
+    imagePickControl.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePickControl animated:YES completion:nil];
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    myLog(@"%@",[info allKeys]);
+    UIImage *choseImage = [info valueForKey:UIImagePickerControllerEditedImage];
+    NSData *dataImage = UIImageJPEGRepresentation(choseImage, 0.8);
+    NSString *imageDataStr = [dataImage base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    myLog(@"%@",imageDataStr);
+    [self sendMessage:imageDataStr ad:@"image"];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 @end
