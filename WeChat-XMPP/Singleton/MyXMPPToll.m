@@ -152,13 +152,17 @@ SingletonM(MyXMPPToll)
     _xmppMessageData = nil;
     
 }
+-(void)postNotifi:(XMPPResultType)type{
+    NSDictionary *dicData = @{@"status" : @(type)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:XMPPConnectionNotification object:nil userInfo:dicData];
+}
 #pragma mark 连接服务器
 -(void)connectHost{
     myLog(@"开始连接服务器");
     if (!_xmppStream) {
         [self initXMPPStream];
     }
-    
+    [self postNotifi:XMPPResultTypeLoginConnect];
     /**
      *  设置用户的JID（用户名) domain：域名 resource为设备标示
      */
@@ -235,6 +239,10 @@ SingletonM(MyXMPPToll)
     if (error && _resultBlock) {
         _resultBlock(XMPPResultTypeNetError);
     }
+    if (error) {
+        [self postNotifi:XMPPResultTypeNetError];
+    }
+    
 }
 /**
  *  密码正确，验证成功
@@ -248,6 +256,7 @@ SingletonM(MyXMPPToll)
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeLoginSuccess);
     }
+    [self postNotifi:XMPPResultTypeLoginSuccess];
 }
 -(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error{
     myLog(@"授权失败");
@@ -256,7 +265,9 @@ SingletonM(MyXMPPToll)
         
         _resultBlock(XMPPResultTypeLoginFailure);
     }
-    
+    if (error) {
+        [self postNotifi:XMPPResultTypeLoginFailure];
+    }
     
 }
 
@@ -312,6 +323,9 @@ SingletonM(MyXMPPToll)
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]];
     [UIApplication sharedApplication].keyWindow.rootViewController = [storyboard instantiateInitialViewController];
     
+}
+-(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
+    myLog(@"%@",message.body);
 }
 
 @end

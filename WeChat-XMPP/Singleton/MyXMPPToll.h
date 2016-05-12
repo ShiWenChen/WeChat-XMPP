@@ -17,9 +17,11 @@
 #import <XMPPMessageArchiving.h>
 #import <XMPPMessageArchivingCoreDataStorage.h>
 
+static NSString *XMPPConnectionNotification = @"XMPPConnectionNotification";
 
 
 typedef enum{
+    XMPPResultTypeLoginConnect,
     XMPPResultTypeLoginSuccess,
     XMPPResultTypeLoginFailure,
     XMPPResultTypeNetError

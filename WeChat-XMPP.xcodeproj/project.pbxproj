@@ -10,6 +10,7 @@
 		555B1753EB20163483AE8E75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C371592CB820926FFB4D006D /* libPods.a */; };
 		BF0122DC1CD9FC490086E4F9 /* ChactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0122DB1CD9FC490086E4F9 /* ChactViewController.m */; };
 		BF06AABE1CC5C51F005610D9 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BF06AABD1CC5C51F005610D9 /* UserInfo.m */; };
+		BF088AF71CE477E40008F137 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF088AF61CE477E40008F137 /* MessageViewController.m */; };
 		BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E11CC7760500215827 /* LoginSuperClass.m */; };
 		BF2001E81CC8800C00215827 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001E71CC8800C00215827 /* RegistViewController.m */; };
 		BF2001EB1CC8D6C400215827 /* MyXMPPToll.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2001EA1CC8D6C400215827 /* MyXMPPToll.m */; };
@@ -60,6 +61,8 @@
 		BF06AABB1CC5C4F9005610D9 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		BF06AABC1CC5C51F005610D9 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		BF06AABD1CC5C51F005610D9 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		BF088AF51CE477E40008F137 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		BF088AF61CE477E40008F137 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		BF2001E01CC7760500215827 /* LoginSuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSuperClass.h; sourceTree = "<group>"; };
 		BF2001E11CC7760500215827 /* LoginSuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSuperClass.m; sourceTree = "<group>"; };
 		BF2001E61CC8800C00215827 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				BF7A35C71CD899D8007A46B9 /* AddFriendsViewController.m */,
 				BF0122DA1CD9FC490086E4F9 /* ChactViewController.h */,
 				BF0122DB1CD9FC490086E4F9 /* ChactViewController.m */,
+				BF088AF51CE477E40008F137 /* MessageViewController.h */,
+				BF088AF61CE477E40008F137 /* MessageViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				BF4908121CC0CABF00171BD5 /* MyViewController.m in Sources */,
 				BF5F5B141CBE341D00D6B854 /* AppDelegate.m in Sources */,
 				BF47A3A11CCDCC8400CE8EC2 /* EditingViewController.m in Sources */,
+				BF088AF71CE477E40008F137 /* MessageViewController.m in Sources */,
 				BF2001EB1CC8D6C400215827 /* MyXMPPToll.m in Sources */,
 				BF2001E21CC7760500215827 /* LoginSuperClass.m in Sources */,
 				BF4908071CBF987E00171BD5 /* MBProgressHUD+HM.m in Sources */,

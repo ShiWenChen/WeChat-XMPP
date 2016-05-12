@@ -7,25 +7,6 @@
     </dependencies>
     <scenes>
         <!--微信-->
-        <scene sceneID="Kvo-zi-FJV">
-            <objects>
-                <viewController id="QD8-RO-f8g" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TRe-u7-q1C"/>
-                        <viewControllerLayoutGuide type="bottom" id="mEJ-aO-HxO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kIj-mY-V2Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="微信" id="m28-mH-hCr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GgH-0h-ddQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3425.5" y="-1938.5"/>
-        </scene>
-        <!--微信-->
         <scene sceneID="OsK-3X-wCt">
             <objects>
                 <navigationController id="S7o-SU-PiD" sceneMemberID="viewController">
@@ -36,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="QD8-RO-f8g" kind="relationship" relationship="rootViewController" id="Vmp-gJ-Sje"/>
+                        <segue destination="uD3-FI-eul" kind="relationship" relationship="rootViewController" id="luY-Vr-XaN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUa-Fd-YiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,6 +101,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TW-He-NfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3425.5" y="-1201.5"/>
+        </scene>
+        <!--消息-->
+        <scene sceneID="Dsk-PX-hMk">
+            <objects>
+                <tableViewController id="uD3-FI-eul" customClass="MessageViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ela-mC-G6D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HaF-73-0W0">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HaF-73-0W0" id="Yrx-BJ-mO3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="uD3-FI-eul" id="j6b-Qg-vBD"/>
+                            <outlet property="delegate" destination="uD3-FI-eul" id="Hqw-w5-CQN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="消息" id="xLQ-mf-oaB">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="8p0-4k-Dgs">
+                            <view key="customView" contentMode="scaleToFill" id="cC5-CI-Zzr">
+                                <rect key="frame" x="16" y="5" width="150" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t4u-H9-dKD">
+                                        <rect key="frame" x="0.0" y="7" width="20" height="20"/>
+                                        <color key="color" red="0.92156862750000001" green="0.062745098040000002" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="activityView" destination="t4u-H9-dKD" id="KOP-Wp-BGy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaj-RL-Gcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3425.5" y="-2120.5"/>
         </scene>
         <!--添加好友-->
         <scene sceneID="7uT-sS-tqw">
