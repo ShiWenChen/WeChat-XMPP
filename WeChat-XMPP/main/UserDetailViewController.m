@@ -73,7 +73,10 @@
     /**
      *  邮件 xmpp框架并没有解析，如要使用需自己解析
      */
-    self.lbUserEmail.text = userCard.mailer;
+    if (userCard.emailAddresses.count > 0) {
+        self.lbUserEmail.text = userCard.emailAddresses[0];
+    }
+    
 }
 
 /**
@@ -156,7 +159,7 @@
     /**
      *  邮件 xmpp框架并没有解析，如要使用需自己解析
      */
-    userCard.mailer = self.lbUserEmail.text;
+    [userCard setEmailAddresses:@[self.lbUserEmail.text]];
     
     [[MyXMPPToll sharedMyXMPPToll].xmppTemp updateMyvCardTemp:userCard];
 }
